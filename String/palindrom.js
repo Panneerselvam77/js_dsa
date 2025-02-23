@@ -16,3 +16,12 @@ function isPalindromeLoop(str) {
 console.log(isPalindromeLoop("racecar")); // true
 console.log(isPalindromeLoop("hello")); // false
 console.log(isPalindromeLoop("A man, a plan, a canal: Panama")); // true
+
+function isPalindrome(str) {
+  const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, ""); // Remove non-alphanumeric characters
+  return cleanedStr === cleanedStr.split("").reverse().join("");
+}
+
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("hello")); // false
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
