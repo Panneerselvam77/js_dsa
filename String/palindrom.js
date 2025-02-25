@@ -12,7 +12,7 @@ function isPalindromeLoop(str) {
   }
   return true;
 }
-
+debugger;
 console.log(isPalindromeLoop("racecar")); // true
 console.log(isPalindromeLoop("hello")); // false
 console.log(isPalindromeLoop("A man, a plan, a canal: Panama")); // true
