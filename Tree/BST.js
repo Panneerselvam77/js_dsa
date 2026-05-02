@@ -46,6 +46,7 @@ class Tree {
       return this.search(root.right, value);
     }
   }
+  // Depth First Traversal
   preOrder(root) {
     if (root) {
       console.log(root.value);
@@ -66,6 +67,23 @@ class Tree {
       this.postOrder(root.right);
       console.log(root.value);
     }
+  }
+  // Breadth First Traversal
+  levelOrder() {
+    let queue = [];
+    let result = [];
+    queue.push(this.root);
+    while (queue.length > 0) {
+      let curr = queue.shift();
+      result.push(curr.value);
+      if (curr.left) {
+        queue.push(curr.left);
+      }
+      if (curr.right) {
+        queue.push(curr.right);
+      }
+    }
+    return result;
   }
 }
 
