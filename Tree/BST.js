@@ -14,7 +14,7 @@ class Tree {
     return this.root === null;
   }
   insert(value) {
-    const newNode = new Node(this.value);
+    const newNode = new Node(value);
     if (this.isEmpty()) {
       this.root = newNode;
     } else {
@@ -44,6 +44,27 @@ class Tree {
       return this.search(root.left, value);
     } else {
       return this.search(root.right, value);
+    }
+  }
+  preOrder(root) {
+    if (root) {
+      console.log(root.value);
+      this.preOrder(root.left);
+      this.preOrder(root.right);
+    }
+  }
+  inOrder(root) {
+    if (root) {
+      this.inOrder(root.left);
+      console.log(root.value);
+      this.inOrder(root.right);
+    }
+  }
+  postOrder(root) {
+    if (root) {
+      this.postOrder(root.left);
+      this.postOrder(root.right);
+      console.log(root.value);
     }
   }
 }
